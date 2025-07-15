@@ -1,9 +1,9 @@
 // const heading = React.createElement("h1", {xyz:"test", id: "welcome"}, "Hello world from react")
 // const root = ReactDOM.createRoot(document.getElementById("root"))
 // root.render(heading)
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
-
+import Fetch  from './Components/Fetch'
 // const parent = React.createElement("div", { id: "parent" }, [
 //     React.createElement("div", { id: "child1" }, [
 //         React.createElement("h1", { id: "heading_1" }, "Heading 1"),
@@ -30,20 +30,27 @@ import ReactDOM from 'react-dom/client'
 // const jsxHeading = <h1 id="heading"> Heading is Updated to JSX</h1>
 
 const Header = () =>{
-    return()
+    return(
+        <div>
+            <Fetch />
+        </div>
+    )
 }
 
 
 const AppLayout = () => {
+    const [count, setCount] = useState(0)
 return (
     <div id="root">
-
+        <h2>{count}</h2>
+      <button onClick={() => setCount(count + 1)}>+</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
     </div>
 )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<HeadingComponent />)
+root.render(<Header />)
 
 
 

@@ -683,6 +683,9 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
+var _fetch = require("./Components/Fetch");
+var _fetchDefault = parcelHelpers.interopDefault(_fetch);
+var _s = $RefreshSig$();
 // const parent = React.createElement("div", { id: "parent" }, [
 //     React.createElement("div", { id: "child1" }, [
 //         React.createElement("h1", { id: "heading_1" }, "Heading 1"),
@@ -704,26 +707,63 @@ var _clientDefault = parcelHelpers.interopDefault(_client);
 // const heading = React.createElement("h1", { id: "heading" }, "heading 3 Updated")
 // const jsxHeading = <h1 id="heading"> Heading is Updated to JSX</h1>
 const Header = ()=>{
-    return;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _fetchDefault.default), {}, void 0, false, {
+            fileName: "App.js",
+            lineNumber: 35,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 34,
+        columnNumber: 9
+    }, undefined);
 };
 _c = Header;
 const AppLayout = ()=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "root"
-    }, void 0, false, {
+        id: "root",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: count
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 45,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setCount(count + 1),
+                children: "+"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 46,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setCount(count - 1),
+                children: "-"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 47,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 38,
+        lineNumber: 44,
         columnNumber: 5
     }, undefined);
 };
+_s(AppLayout, "oDgYfYHkD9Wkv4hrAPCkI/ev3YU=");
 _c1 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeadingComponent, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 45,
+    lineNumber: 53,
     columnNumber: 13
-}, undefined)) // root.render(jsxHeading)
-;
+}, undefined));
 var _c, _c1;
 $RefreshReg$(_c, "Header");
 $RefreshReg$(_c1, "AppLayout");
@@ -733,7 +773,7 @@ $RefreshReg$(_c1, "AppLayout");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-dom/client":"hrvwu","react/jsx-dev-runtime":"dVPUn"}],"jMk1U":[function(require,module,exports,__globalThis) {
+},{"react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-dom/client":"hrvwu","react/jsx-dev-runtime":"dVPUn","./Components/Fetch":"hoVcn"}],"jMk1U":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("a569817e6ea559f6");
 
@@ -18440,6 +18480,50 @@ module.exports = require("ee51401569654d91");
     };
 })();
 
-},{"58362d9d82be395f":"jMk1U"}]},["icAAj","blcJa"], "blcJa", "parcelRequire164e", {}, null, null, "http://localhost:1234")
+},{"58362d9d82be395f":"jMk1U"}],"hoVcn":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$4677 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$4677.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4677.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+function UserList() {
+    _s();
+    const [users, setUsers] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetch("https://jsonplaceholder.typicode.com/users").then((res)=>res.json()).then((data)=>setUsers(data));
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+        children: users.map((user)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                children: user.name
+            }, user.id, false, {
+                fileName: "Components/Fetch.js",
+                lineNumber: 16,
+                columnNumber: 9
+            }, this))
+    }, void 0, false, {
+        fileName: "Components/Fetch.js",
+        lineNumber: 14,
+        columnNumber: 5
+    }, this);
+}
+_s(UserList, "JadZszbqna06PpJs9hMo7Hl/LOY=");
+_c = UserList;
+exports.default = UserList;
+var _c;
+$RefreshReg$(_c, "UserList");
+
+  $parcel$ReactRefreshHelpers$4677.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["icAAj","blcJa"], "blcJa", "parcelRequire164e", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=Namaste React.cb65f72e.js.map
