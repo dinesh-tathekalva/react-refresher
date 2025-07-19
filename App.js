@@ -1,56 +1,92 @@
-// const heading = React.createElement("h1", {xyz:"test", id: "welcome"}, "Hello world from react")
-// const root = ReactDOM.createRoot(document.getElementById("root"))
-// root.render(heading)
-import React, { useState } from 'react'
+
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Fetch  from './Components/Fetch'
-// const parent = React.createElement("div", { id: "parent" }, [
-//     React.createElement("div", { id: "child1" }, [
-//         React.createElement("h1", { id: "heading_1" }, "Heading 1"),
-//         React.createElement("h2", { id: "heading_2" }, "Heading 2"),
-//     ]),
-//     React.createElement("div", { id: "child2" }, [
-//         React.createElement("h1", { id: "heading_1" }, "Heading 1"),
-//         React.createElement("h2", { id: "heading_2" }, "Heading 2"),
-//     ])
-// ])
+import index from './index.css'
 
-// const Title = () => (
-//     <h1 className='heading1' tabIndex="5">Welcome to React</h1>
-// )
 
-// const HeadingComponent = () => (
-//     <div id="container">
-//         <Title />
-//     </div>
-// )
+const Header = () => {
+    return (
+        <div className='header'>
+            <div className='logo-container'>
+                <img className='logo' src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All" />
 
-// const heading = React.createElement("h1", { id: "heading" }, "heading 3 Updated")
+            </div>
+            <div className='nav-items'>
+                <ul>
+                    <li>Name</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
 
-// const jsxHeading = <h1 id="heading"> Heading is Updated to JSX</h1>
-
-const Header = () =>{
-    return(
-        <div>
-            <Fetch />
+const RestaurantCard = () => {
+    return (
+        <div className='res-card'>
+            <img className='res-logo' src="https://b.zmtcdn.com/data/pictures/chains/1/50691/0435a03f4d2017a0a64d90b279c2fa63.jpg"/>
+            <h3>
+                Meghana Foods
+            </h3>
+            <div>
+               Biriyani, North indian 
+            </div>
+            <div>
+            44 days ago
+            </div>
+            <div className='res-distance'>
+38 Minutes
+            </div>
         </div>
     )
 }
 
 
+const Body = () => {
+    return (
+        <div className='body'>
+            <div className='search'>
+                search
+            </div>
+            <div className='res-container'>
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                
+            </div>
+        </div>
+    )
+}
 const AppLayout = () => {
-    const [count, setCount] = useState(0)
-return (
-    <div id="root">
-        <h2>{count}</h2>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
-    </div>
-)
+    return (
+        <div className='app'>
+            <Header />
+            <Body />
+        </div>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<Header />)
+root.render(<AppLayout />)
 
 
 
