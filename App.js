@@ -26,18 +26,18 @@ const Header = () => {
 const RestaurantCard = () => {
     return (
         <div className='res-card'>
-            <img className='res-logo' src="https://b.zmtcdn.com/data/pictures/chains/1/50691/0435a03f4d2017a0a64d90b279c2fa63.jpg"/>
+            <img className='res-logo' src="https://b.zmtcdn.com/data/pictures/chains/1/50691/0435a03f4d2017a0a64d90b279c2fa63.jpg" />
             <h3>
                 Meghana Foods
             </h3>
             <div>
-               Biriyani, North indian 
+                Biriyani, North indian
             </div>
             <div>
-            44 days ago
+                44 days ago
             </div>
             <div className='res-distance'>
-38 Minutes
+                38 Minutes
             </div>
         </div>
     )
@@ -71,7 +71,7 @@ const Body = () => {
                 <RestaurantCard />
                 <RestaurantCard />
                 <RestaurantCard />
-                
+
             </div>
         </div>
     )
@@ -85,8 +85,6 @@ const AppLayout = () => {
     )
 }
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<AppLayout />)
-
-
-
