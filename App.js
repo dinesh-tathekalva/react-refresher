@@ -43,6 +43,12 @@ const RestaurantCard = () => {
     )
 }
 
+const TestingHtml = () => {
+    return (
+        <div> testing HTML</div>
+    )
+}
+
 
 const Body = () => {
     return (
@@ -71,7 +77,7 @@ const Body = () => {
                 <RestaurantCard />
                 <RestaurantCard />
                 <RestaurantCard />
-
+{<TestingHtml />}
             </div>
         </div>
     )
