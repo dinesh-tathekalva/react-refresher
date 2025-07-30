@@ -39,6 +39,9 @@ const RestaurantCard = () => {
             <div className='res-distance'>
                 38 Minutes
             </div>
+            <div>
+                
+            </div>
         </div>
     )
 }
