@@ -147,8 +147,12 @@ const Body = () => {
             </div>
             <div className='res-container'>
                 <RestaurantCard resData={resobj}/>
+                <RestaurantCard resData={resobj}/>
+                <RestaurantCard resData={resobj}/>
+                <RestaurantCard resData={resobj}/>
+                
                
-{<TestingHtml />}
+{/* {<TestingHtml />} */}
             </div>
         </div>
     )
