@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import index from './index.css'
-
+import TrafficLights from './src/components/TrafficLights'
 
 const Header = () => {
     return (
@@ -419,6 +419,7 @@ const Body = () => {
                 <RestaurantCard resData={resObj2}/>
                 <RestaurantCard resData={resObj3}/>
             </div>
+            <TrafficLights />
         </div>
     )
 }

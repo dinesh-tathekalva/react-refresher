@@ -55,3 +55,31 @@
     width: 75%;
     height: 50%;
 }
+
+
+.traffic-lights{
+    background-color: black;
+    width:70px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding:10px;
+    }
+    .light{
+    width:60px;
+    height:60px;
+    cursor: pointer;
+    }
+    .red{
+    background-color: red;
+    }
+    .yellow{
+    background-color: yellow;
+    }
+    
+    .green{
+    background-color: green;
+    }
+    .off{
+    background-color: grey;
+    }
