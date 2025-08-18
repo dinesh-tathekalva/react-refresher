@@ -2,11 +2,8 @@
 import { useMemo, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import truncate from "../utils/truncate";
-import { CDN_URL } from "../utils/constants";
 
-/**
- * Helper: detect "Pure Veg" badge from badgesV2.imageBased
- */
+
 const hasPureVegBadge = (info) => {
   const imgBadges =
     info?.badgesV2?.entityBadges?.imageBased?.badgeObject ?? [];
@@ -17,9 +14,6 @@ const hasPureVegBadge = (info) => {
   });
 };
 
-/**
- * Helper: gather simple image/text badges (e.g., bolt!, category awards)
- */
 const getImageBadges = (info) => {
   const imgBadges =
     info?.badgesV2?.entityBadges?.imageBased?.badgeObject ?? [];
@@ -32,9 +26,6 @@ const getImageBadges = (info) => {
     }));
 };
 
-/**
- * Rating color utility
- */
 const ratingClass = (rating) => {
   const r = parseFloat(rating);
   if (Number.isNaN(r)) return "rating--na";
@@ -44,15 +35,10 @@ const ratingClass = (rating) => {
   return "rating--low";
 };
 
-/**
- * Fallback image (1x1 transparent) to avoid broken image icon
- */
 const EMPTY_IMG =
   "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
 
-/**
- * Optional shimmer placeholder
- */
+
 const Shimmer = () => (
   <div className="res-card shimmer" aria-hidden="true">
     <div className="res-media shimmer-block" />
@@ -138,7 +124,6 @@ const RestaurantCard1 = ({ resData, loading = false, onClick }) => {
           onError={handleImgError}
         />
 
-        {/* Offer pill */}
         {(offerHeader || offerSub) && (
           <div className="res-offer" aria-label="current offer">
             <span className="res-offer-header">{offerHeader}</span>
@@ -146,15 +131,13 @@ const RestaurantCard1 = ({ resData, loading = false, onClick }) => {
           </div>
         )}
 
-        {/* Veg badge */}
         {isPureVeg && <span className="res-badge res-badge-veg">Pure Veg</span>}
 
-        {/* Image/text badges row */}
         {badges?.length > 0 && (
           <div className="res-badges">
             {badges.slice(0, 3).map((b, i) => (
               <span key={i} className="res-badge res-badge-img" title={b.description}>
-                {/* If you have a CDN base for badges, prepend it here */}
+                
                 {b.imageId ? <img src={`${CDN_URL}${b.imageId}`} alt={b.description || "badge"} /> : (b.description || "Badge")}
               </span>
             ))}
@@ -186,7 +169,6 @@ const RestaurantCard1 = ({ resData, loading = false, onClick }) => {
         {priceForTwo && <span className="res-price">{priceForTwo}</span>}
       </div>
 
-      {/* CTA row */}
       <div className="res-actions">
         {ctaLink ? (
           <a
@@ -207,8 +189,6 @@ const RestaurantCard1 = ({ resData, loading = false, onClick }) => {
           aria-label="Save to favorites"
           onClick={(e) => {
             e.stopPropagation();
-            // hook up to your state/store later
-            // toast('Saved!');
           }}
         >
           ♥
