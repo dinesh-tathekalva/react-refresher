@@ -24,8 +24,6 @@ const Header = () => {
     )
 }
 
-
-
 const resobj = {
     "info": {
         "id": "131588",
